@@ -1,0 +1,10 @@
+<%= form_with url: '/create' do |form| %>
+    <%= form.text_field :fname %>
+    <%= form.text_field :lname %>
+    <%= form.text_field :email %>
+    <%= form.text_field :phone, class: 'form-control', placeholder: '(xxx) xxx-xxxx' %>
+    <%= form.text_field :street_address %>
+    <%= form.text_field :city %>
+    <%= form.text_field :state %>
+    <%= form.submit "Create" %>
+<% end %>

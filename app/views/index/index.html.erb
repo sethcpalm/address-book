@@ -1,0 +1,29 @@
+<h2 class="my-3">Contacts</h2>
+<table class="table table-striped table-bordered" id="contact-table">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>State</th>
+    </tr>
+    <% @contacts.each do |contact| %>
+        <tr>
+            <td><%= contact.fname %></td>
+            <td><%= contact.lname %></td>
+            <td><%= contact.email %></td>
+            <td><%= contact.phone %></td>
+            <td><%= contact.street_address %></td>
+            <td><%= contact.city %></td>
+            <td><%= contact.state %></td>
+        </tr>
+    <% end %>
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#contact-table").DataTable();
+    });
+</script>
