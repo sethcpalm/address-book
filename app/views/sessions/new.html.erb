@@ -1,7 +1,7 @@
-<div class="d-flex flex-row justify-content-center">
-   <div class="d-flex flex-column">
-      <div style="width: 300px;" class="flex-box">
-         <h1 class="mb-5">Login</h1>
+<div class='d-flex flex-row justify-content-center'>
+   <div class='d-flex flex-column'>
+      <div style='width: 300px;' class='flex-box'>
+         <h2 class='my-4'>Login</h2>
          <%= form_with url: '/' do |form| %>
             <div class='mb-3'>
                <%= form.label :USERNAME %>
@@ -14,9 +14,9 @@
             <% if @error %>
               <div class='alert alert-danger'><%= @error %></div>
             <% end %>
-            <div class="d-flex flex-row justify-content-between">
+            <div class='d-flex flex-row justify-content-between'>
                <%= form.submit 'Login', class: 'btn btn btn-primary mr-3'%>
-               <a class="btn btn btn-link" href="/users/new">Register</a>
+               <a class='btn btn btn-link' href='/users/new'>Register</a>
             </div>
          <% end %>
       </div>
