@@ -1,25 +1,26 @@
-# README
+# Address Book for Breeze Airways
+by Seth Palmer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the code for a simple address book web app running on Ruby on Rails.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-"# address-book" 
+This address book enables the following functionalities:
+- User authentication
+  - Register user
+    - Unique usernames
+    - Encrypt passwords
+    - Password length > 8
+  - Login
+  - Force authentication in session to access site
+- Manage contacts
+  - Contacts have:
+    - First name
+    - Last name
+    - Email
+    - Phone
+    - Street Address
+    - City
+    - State
+  - Enforce that at least a first and last name are entered
+  - Create contacts
+  - Edit contacts
+  - Delete contacts
