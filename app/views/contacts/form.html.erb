@@ -1,0 +1,56 @@
+<div class="d-flex flex-row justify-content-center">
+    <div class="d-flex flex-column">
+        <div style="width: 500px;" class="flex-box">
+            <h2 class='mb-4'>Contact Form</h2>
+            <div class='d-flex'>
+                <%= form_with model: @contact do |form| %>
+                    <div class='row'>
+                        <div class='col form-group'>
+                            <%= form.label :FIRST_NAME %>
+                            <%= form.text_field :fname, class: 'form-control' %>
+                            <% @contact.errors.full_messages_for(:fname).each do |message| %>
+                                <div class='alert alert-danger'><%= message %></div>
+                            <% end %>
+                        </div>
+                        <div class='col form-group'>
+                            <%= form.label :LAST_NAME %>
+                            <%= form.text_field :lname, class: 'form-control' %>
+                            <% @contact.errors.full_messages_for(:lname).each do |message| %>
+                                <div class='alert alert-danger'><%= message %></div>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class='form-group'>
+                        <%= form.label :EMAIL_ADDRESS %>
+                        <%= form.email_field :email, class: 'form-control' %>
+                    </div>
+                    <div class='form-group'>
+                        <%= form.label :PHONE_NUMBER %>
+                        <%= form.text_field :phone, class: 'form-control', placeholder: '(xxx) xxx-xxxx' %>
+                            <% @contact.errors.full_messages_for(:phone).each do |message| %>
+                                <div class='alert alert-danger'><%= message %></div>
+                            <% end %>
+                    </div>
+                    <div class='form-group'>
+                        <%= form.label :STREET_ADDRESS %>
+                        <%= form.text_field :street_address, class: 'form-control' %>
+                    </div>
+                    <div class='row'>
+                        <div class='col form-group'>
+                            <%= form.label :CITY %>
+                            <%= form.text_field :city, class: 'form-control' %>
+                        </div>
+                        <div class='col form-group'>
+                            <%= form.label :STATE %>
+                            <%= form.text_field :state, class: 'form-control' %>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between">
+                        <%= form.submit 'Save', class: 'btn btn-primary' %>
+                        <a class='btn btn-link' href='<%= contacts_path %>'>Cancel</a>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <h2 class="my-3">Contacts</h2>
 <table class="table table-striped table-bordered" id="contact-table">
-    <tr>
+    <tr class="thead-dark">
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -8,6 +8,7 @@
         <th>Street Address</th>
         <th>City</th>
         <th>State</th>
+        <th width="1%"><%= link_to icon('fas', 'plus'), new_contact_path, class: "btn btn-sm btn-block btn-primary" %></th>
     </tr>
     <% @contacts.each do |contact| %>
         <tr>
@@ -18,12 +19,10 @@
             <td><%= contact.street_address %></td>
             <td><%= contact.city %></td>
             <td><%= contact.state %></td>
+            <td class="text-nowrap">
+                <%= link_to icon('fas', 'edit'), edit_contact_path(contact), class: 'btn btn-sm btn-secondary' %>
+                <%= link_to icon('fas', 'trash'), contact, method: "delete", class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure you want to remove %s from your contacts?" % contact.fname} %>
+            </td>
         </tr>
     <% end %>
 </table>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#contact-table").DataTable();
-    });
-</script>
